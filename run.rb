@@ -3,4 +3,9 @@
 #As you progress, you will extend the application with more advanced features,
 #including serialization, file I/O, and enhanced user interaction.
 
-require 'task.rb'
+require './task.rb'
+require './list.rb'
+# require './user.rb'
+
+# checklist = Checklist.new("Liga Super 2023")
+# puts checklist
