@@ -5,13 +5,14 @@
 
 require './item.rb'
 require './list.rb'
+require 'colorize'
 
-puts "Welcome to Golf Pro Shop."
-
+puts "Welcome to Golf Pro Shop.".green
+puts 
 @list = ""
 
 loop do
-    puts "What would you like to do?"
+    puts "What would you like to do?".green
     puts "1 - Create List"
     puts "2 - Add item to list"
     puts "3 - Display items"
