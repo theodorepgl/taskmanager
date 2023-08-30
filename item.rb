@@ -1,8 +1,8 @@
-class Task
-  attr_accessor :description, :due_date, :completed, :assigned_to, :priority, :comments
+class Item
+  attr_accessor :name, :due_date, :completed, :assigned_to, :priority, :comments
 
-  def initialize(description) #step one
-    @description = description
+  def initialize(name) #step one
+    @name = name
     @assigned_to = []
     @due_date = nil
     @completed = false
@@ -38,3 +38,11 @@ class Task
     @comments = comments
   end
 end
+
+# task1 = Task.new("Ready to go")
+# puts task1.name
+# puts task1.completed
+# puts task1.assign_user("theo")
+# puts task1.set_due_date("3pm")
+# puts task1.set_priority("HIGH")
+# puts task1.add_comments("submit by late 31 August")

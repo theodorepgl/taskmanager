@@ -1,5 +1,8 @@
+require './item.rb'
+
 class List
-	attr_reader :name
+	attr_accessor :name, :items
+
 	def initialize(name)
 		@name = name
 		@items = []
@@ -7,22 +10,30 @@ class List
 
 	def add_item(title)
 		item = Item.new(title)
+
 		@items << item
-		
-		puts "Item #{item.title} has been added."
+		puts "Item #{item.name} has been added."
 	end
 
 	def display_items
-		puts "Items:"
-		@items.each_with_index |item, index|
-
-			if item.completed?
-				status = "[X]"
+		puts "Items #{name}:"
+		@items.each_with_index do |item, index|
+			if item.complete?
+				status = "[x]"
 			else
 				status = "[ ]"
 			end
-		puts item.title #{index + 1}, #{status} - {title.item}.
+			puts "#{index + 1} - #{status} - #{item.name}"
 		end
+	end
+
+	def remove_item(item)
+		@items.delete(item)
 	end
 end
 
+# groceries = List.new ("groceries")
+# groceries.add_item("jnt")
+# groceries.add_item("gdex")
+# groceries.add_item("citylink")
+# groceries.display_items
